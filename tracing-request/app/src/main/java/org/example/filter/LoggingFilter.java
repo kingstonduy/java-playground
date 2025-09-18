@@ -36,9 +36,6 @@ public class LoggingFilter extends OncePerRequestFilter {
     }
 
     private void logResponse(ContentCachingResponseWrapper response) throws IOException {
-        String traceId = response.getHeader("X-Trace-Id");
-        int status = response.getStatus();
-
         String body = "";
         byte[] buf = response.getContentAsByteArray();
         if (buf.length > 0) {
@@ -49,10 +46,6 @@ public class LoggingFilter extends OncePerRequestFilter {
     }
 
     private void logRequest(ContentCachingRequestWrapper request) {
-        String traceId = request.getHeader("X-Trace-Id");
-        String method = request.getMethod();
-        String uri = request.getRequestURI();
-
         String body = "";
         byte[] buf = request.getContentAsByteArray();
         if (buf.length > 0) {
