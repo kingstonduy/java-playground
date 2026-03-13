@@ -1,4 +1,4 @@
-package org.example.component;
+package org.example.dto;
 
 import com.google.gson.annotations.SerializedName;
 import org.example.ParamSection;

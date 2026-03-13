@@ -1,4 +1,4 @@
-package org.example.component;
+package org.example.dto.component;
 
 import com.google.gson.annotations.SerializedName;
 

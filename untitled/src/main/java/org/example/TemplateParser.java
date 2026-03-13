@@ -2,9 +2,9 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.example.component.ComponentParser;
-import org.example.component.IComponent;
-import org.example.component.TemplateDTO;
+import org.example.dto.TemplateDTO;
+import org.example.dto.component.ComponentParser;
+import org.example.dto.component.IComponent;
 
 public class TemplateParser {
 

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.component.IComponent;
+import org.example.dto.component.IComponent;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package org.example.component;
+package org.example.dto.component;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.zinstant.IZinstantComponent;
+import org.example.zinstant.components.IZinstantComponent;
 
 import java.util.List;
 
