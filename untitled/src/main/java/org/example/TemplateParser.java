@@ -32,7 +32,7 @@ public class TemplateParser {
     /**
      * Converts CentralizedSection object to JSON string
      */
-    public String toJson(TemplateDTO section) {
+    public String toJson(Object section) {
         return gson.toJson(section);
     }
 
