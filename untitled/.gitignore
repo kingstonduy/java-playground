@@ -1,20 +1,15 @@
-# Ignore Gradle project-specific cache directory
-.gradle
+# Gradle
+.gradle/
+build/
 
-# Ignore Gradle build output directory
-build
-
-bin
-
+# IDE
 .idea/
 
+# OS
 .DS_Store
 
-bin/
-
-src/main/java/me/zalo/oa/billing/admin/servers/Main.java
-
-conf/development.config.ini
-
-docs/plans/
+# Claude Code
 .claude/
+
+# Other
+bin/

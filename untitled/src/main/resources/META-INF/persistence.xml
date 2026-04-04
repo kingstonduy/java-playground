@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.0">
+
+    <!--
+        persistence-unit = a named database configuration.
+        "jpa-demo" is the name we use in Java: Persistence.createEntityManagerFactory("jpa-demo")
+
+        transaction-type="RESOURCE_LOCAL" means we manage transactions ourselves
+        (no JTA / app server needed).
+    -->
+    <persistence-unit name="jpa-demo" transaction-type="RESOURCE_LOCAL">
+
+        <!-- Hibernate as the JPA provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- List all entity classes (required without Spring's auto-scan) -->
+        <class>me.personal.jpa.entity.User</class>
+        <class>me.personal.jpa.entity.UserProfile</class>
+        <class>me.personal.jpa.entity.Post</class>
+        <class>me.personal.jpa.entity.Tag</class>
+        <class>me.personal.jpa.entity.Animal</class>
+        <class>me.personal.jpa.entity.Dog</class>
+        <class>me.personal.jpa.entity.Cat</class>
+        <class>me.personal.jpa.entity.Address</class>
+        <class>me.personal.jpa.entity.Product</class>
+
+        <properties>
+            <!-- H2 in-memory database — no install needed, data lost on restart -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1"/>
+            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+
+            <!-- Hibernate settings -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <!--
+                hbm2ddl.auto options:
+                  create       — drop + create tables on startup
+                  create-drop  — drop + create on startup, drop on shutdown
+                  update       — alter tables to match entities (dev only!)
+                  validate     — only validate, don't change schema
+                  none         — do nothing
+            -->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+
+            <!-- Show SQL in console (great for learning, disable in prod) -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <!-- Show bind parameter values -->
+            <property name="hibernate.highlight_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

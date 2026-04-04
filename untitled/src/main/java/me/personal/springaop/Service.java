@@ -1,8 +1,12 @@
-package me.personal.aop;
+package me.personal.springaop;
+
+import org.springframework.stereotype.Component;
 
 /**
- * Single service to demonstrate all AOP pointcuts and advices.
+ * Spring bean — AOP only works on beans managed by the Spring container.
+ * "new Service()" will NOT trigger any aspect. You must get it from Spring context.
  */
+@Component
 public class Service {
 
     @LogRequestResponse
@@ -23,11 +27,11 @@ public class Service {
         return price * quantity;
     }
 
-    public void riskyMethod() throws Exception {
+    public void riskyMethod() {
         throw new IllegalStateException("Something went wrong!");
     }
 
-    public void processPayment(String orderId) throws Exception {
+    public void processPayment(String orderId) {
         throw new RuntimeException("Payment gateway timeout for order: " + orderId);
     }
 }
